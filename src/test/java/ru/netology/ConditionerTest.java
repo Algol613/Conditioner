@@ -56,6 +56,17 @@ public class ConditionerTest {
     }
 
     @Test
+    void shouldIncreaseCurrentTemperature() {
+        Conditioner conditioner = new Conditioner();
+        conditioner.setMaxTemperature(28);
+        conditioner.setMinTemperature(15);
+        conditioner.setCurrentTemperature(20);
+        conditioner.increaseCurrentTemperature();
+        int expected = 21;
+        assertEquals(expected, conditioner.getCurrentTemperature());
+    }
+
+    @Test
     void shouldDecreaseCurrentTemperature() {
         Conditioner conditioner = new Conditioner();
         conditioner.setMaxTemperature(28);
